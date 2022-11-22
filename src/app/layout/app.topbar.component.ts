@@ -11,16 +11,23 @@ import { LayoutService } from "./service/app.layout.service";
 export class AppTopBarComponent {
 
     items!: MenuItem[];
-
+    logedInUser: string;
     @ViewChild('menubutton') menuButton!: ElementRef;
 
     @ViewChild('topbarmenubutton') topbarMenuButton!: ElementRef;
 
     @ViewChild('topbarmenu') menu!: ElementRef;
 
+  
+
     constructor(public layoutService: LayoutService, 
                 private authService: AuthService,
-                private router: Router) { }
+                private router: Router) {
+
+      this.logedInUser = this.authService.getUser();
+      console.log(this.logedInUser)
+
+  }
 
     logOut(){ 
       this.authService.logOut();

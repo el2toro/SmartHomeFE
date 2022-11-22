@@ -17,16 +17,20 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Home',
                 items: [
-                    { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
-                    {
-                        label: 'Cameras',
-                        items: [
-                            {label: 'Outdoor', icon: 'pi pi-fw pi-video'},
-                            {label: 'Indoor', icon: 'pi pi-fw pi-video'},
-                            {label: 'Parking', icon: 'pi pi-fw pi-video'},
-                            {label: 'Garage', icon: 'pi pi-fw pi-video'}
-                        ]
-                    }
+                    { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },                  
+                ]
+            },
+            {
+                label: 'Video surveliance',
+                items: [{label: 'Cameras', icon: 'pi pi-fw pi-video',
+                items:[
+                    {label: 'Outdoor', icon: 'pi pi-fw pi-video'},
+                    {label: 'Indoor', icon: 'pi pi-fw pi-video'},
+                    {label: 'Parking', icon: 'pi pi-fw pi-video'},
+                    {label: 'Garage', icon: 'pi pi-fw pi-video'}
+                ]}
+
+                    
                 ]
             },
             {

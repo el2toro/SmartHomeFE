@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AuthService } from './demo/service/auth/auth.service';
 import { AuthGuardService } from './demo/service/guards/auth-guard.service';
+import { WeatherService } from './demo/service/weather/weather.service';
 
 @NgModule({
     declarations: [
@@ -31,7 +32,7 @@ import { AuthGuardService } from './demo/service/guards/auth-guard.service';
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
         CountryService, CustomerService, EventService, IconService, NodeService,
-        PhotoService, ProductService, AuthService, AuthGuardService,
+        PhotoService, ProductService, AuthService, AuthGuardService, WeatherService
     ],
     bootstrap: [AppComponent]
 })
