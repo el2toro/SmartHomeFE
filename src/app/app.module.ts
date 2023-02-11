@@ -14,6 +14,9 @@ import { PhotoService } from './demo/service/photo.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
+//PrimeNg Modules
+import {PanelModule} from 'primeng/panel';
+
 import { AuthService } from './demo/service/auth/auth.service';
 import { AuthGuardService } from './demo/service/guards/auth-guard.service';
 import { WeatherService } from './demo/service/weather/weather.service';
@@ -28,6 +31,7 @@ import { WeatherService } from './demo/service/weather/weather.service';
         AppLayoutModule,
         BrowserModule,
         HttpClientModule,
+        PanelModule,
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
