@@ -13,10 +13,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
     date: Date = new Date();
 
     weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
     day = this.weekday[this.date.getDay()];
 
-    collapsed = false;
-    
+    expanded = false;
+    week  =  this.weekday.slice(0, 3)
 
     constructor(public layoutService: LayoutService, 
                 private weatherService: WeatherService) {
@@ -25,7 +26,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
                              
     }
 
-    ngOnInit() {    
+    ngOnInit() { 
+        this.weekday = this.weekday.slice(0, 3)   
     }
 
     ngOnDestroy() {
@@ -37,10 +39,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
         next: (value) => {this.temperature = value.value},
         error: (error) => {console.log(error)}
        })
-       console.log(this.temperature)
     }
 
     getDate(){
         this.date = new Date()
-    }
+    }  
+    
+
 }
