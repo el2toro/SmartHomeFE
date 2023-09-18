@@ -20,6 +20,7 @@ import {PanelModule} from 'primeng/panel';
 import { AuthService } from './demo/service/auth/auth.service';
 import { AuthGuardService } from './demo/service/guards/auth-guard.service';
 import { WeatherService } from './demo/service/weather/weather.service';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
     declarations: [
@@ -35,8 +36,17 @@ import { WeatherService } from './demo/service/weather/weather.service';
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
-        CountryService, CustomerService, EventService, IconService, NodeService,
-        PhotoService, ProductService, AuthService, AuthGuardService, WeatherService
+        CountryService, 
+        CustomerService, 
+        EventService, 
+        IconService, 
+        NodeService,
+        PhotoService, 
+        ProductService, 
+        AuthService, 
+        AuthGuardService, 
+        WeatherService, 
+        MessageService,
     ],
     bootstrap: [AppComponent]
 })

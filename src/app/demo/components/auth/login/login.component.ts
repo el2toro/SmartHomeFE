@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { HttpResponse } from '@angular/common/http';
 import { AuthService } from 'src/app/demo/service/auth/auth.service';
+import { MessageService } from 'primeng/api';
+import { AuthResponseModel } from 'src/app/models/login.model';
 
 @Component({
     selector: 'app-login',
@@ -33,22 +35,41 @@ export class LoginComponent {
     username!: string
     password!: string;
 
-    constructor(public layoutService: LayoutService, private router: Router, private authService: AuthService) { }
+    invalidUsername: boolean;
+    invalidPassword: boolean;
+
+    constructor(public layoutService: LayoutService, 
+                private router: Router, 
+                private authService: AuthService,
+                private messageService: MessageService) {
+
+    }
 
     signIn(){
-
-        console.log(this.username, this.password)
-        this.authService.login(this.username, this.password).subscribe(response =>{
-            if(response.value != null){
-                console.log(response.value)
-                
+        this.invalidUsername = false;
+        this.invalidPassword = false;
+        
+        this.authService.login(this.username, this.password).subscribe({ 
+        next: (response) =>{
+            if(response.value != null){             
                 this.authService.saveToken(response.value.token);
                 this.authService.saveUser(this.username);
                 this.router.navigate(['/'])
             }
-        }),
-        (error: HttpResponse<any>) => {
-            console.log(error)
-        }    
-    }
+        },
+        error: (error: HttpResponse<any>) => {
+            if(error.status === 400){
+                this.invalidPassword = true;
+                this.messageService.add({severity:'error', summary:'Wrong password', detail:'The entered password is invalid. Please try again'})
+               
+            }
+            else if(error.status === 404){
+                this.invalidUsername = true;
+                this.messageService.add({severity:'error', summary:'User not found', detail:'Please try again'})
+            }
+            else{
+                this.messageService.add({severity:'error', summary:'Server error', detail:'Something went wrong'})          
+            }
+        }     
+    })}; 
 }
