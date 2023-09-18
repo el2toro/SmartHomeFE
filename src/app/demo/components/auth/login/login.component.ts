@@ -30,7 +30,7 @@ import { AuthResponseModel } from 'src/app/models/login.model';
 })
 export class LoginComponent {
 
-    valCheck: string[] = ['remember'];
+    valCheck: boolean;
 
     username!: string
     password!: string;
@@ -42,13 +42,12 @@ export class LoginComponent {
                 private router: Router, 
                 private authService: AuthService,
                 private messageService: MessageService) {
-
     }
 
     signIn(){
         this.invalidUsername = false;
         this.invalidPassword = false;
-        
+        console.log(this.valCheck)
         this.authService.login(this.username, this.password).subscribe({ 
         next: (response) =>{
             if(response.value != null){             
@@ -72,4 +71,8 @@ export class LoginComponent {
             }
         }     
     })}; 
+
+    forgotPassword(){
+        this.router.navigate(['/forgotPassword'])
+    }
 }

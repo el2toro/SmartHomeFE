@@ -22,10 +22,10 @@
 
                     <div class="flex align-items-center justify-content-between mb-5">
                         <div class="flex align-items-center">
-                            <p-checkbox id="rememberme1" [binary]="true" styleClass="mr-2"></p-checkbox> 
+                            <p-checkbox id="rememberme1" [binary]="true" styleClass="mr-2" [(ngModel)]="valCheck"></p-checkbox> 
                             <label for="rememberme1">Remember me</label> 
                         </div>
-                        <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)">Forgot password?</a>
+                        <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)" (click)="forgotPassword()">Forgot password?</a>
                     </div>
                     <button pButton pRipple label="Sign In" (click)="signIn()" class="w-full p-3 text-xl"></button>
                 </div>
