@@ -47,7 +47,7 @@ export class LoginComponent {
     signIn(){
         this.invalidUsername = false;
         this.invalidPassword = false;
-        console.log(this.valCheck)
+        
         this.authService.login(this.username, this.password).subscribe({ 
         next: (response) =>{
             if(response.value != null){             
