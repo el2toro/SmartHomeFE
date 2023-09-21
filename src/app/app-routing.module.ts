@@ -18,6 +18,7 @@ import { AuthGuardService } from './demo/service/guards/auth-guard.service';
                 ],
             },
             { path: 'login', loadChildren: () => import('./demo/components/auth/login/login.module').then(m => m.LoginModule) },
+            { path: 'change-password', loadChildren: () => import('./demo/components/auth/change-password/change-password.module').then(m => m.ChangePasswordModule) },
             { path: 'auth', loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule) },
             { path: 'landing', loadChildren: () => import('./demo/components/landing/landing.module').then(m => m.LandingModule) },
             { path: 'pages/notfound', component: NotfoundComponent },
