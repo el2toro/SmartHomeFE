@@ -28,6 +28,8 @@ import { MessageService } from 'primeng/api';
 import { ChangePasswordComponent } from './demo/components/auth/change-password/change-password.component';
 import { ChangePasswordModule } from './demo/components/auth/change-password/change-password.module';
 import { LoginModule } from './demo/components/auth/login/login.module';
+import { DashboardComponent } from './demo/components/dashboard/dashboard.component';
+import { DashboardModule } from './demo/components/dashboard/dashboard.module';
 
 @NgModule({
     declarations: [
@@ -45,7 +47,8 @@ import { LoginModule } from './demo/components/auth/login/login.module';
         CheckboxModule,
         ToastModule,
         LoginModule,
-        ChangePasswordModule
+        ChangePasswordModule,
+        DashboardModule
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },

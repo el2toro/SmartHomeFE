@@ -30,13 +30,12 @@ export class ChangePasswordComponent implements OnInit {
   }
 
   resetPassword(){
-    this.ressetPassword.username = this.authService.getUser();
-
     console.log(this.ressetPassword)
 
     this.authService.ressetPassword(this.ressetPassword).subscribe({
       next: (result) => {
         console.log(result)
+        this.router.navigate(['login'])
       },
       error: (onError) => {
         console.log(onError)

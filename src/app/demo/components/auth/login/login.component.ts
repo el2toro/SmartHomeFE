@@ -45,6 +45,7 @@ export class LoginComponent {
     }
 
     signIn(){
+        console.log('signin')
         this.invalidUsername = false;
         this.invalidPassword = false;
         
@@ -53,7 +54,7 @@ export class LoginComponent {
             if(response.value != null){             
                 this.authService.saveToken(response.value.token);
                 this.authService.saveUser(this.username);
-                this.router.navigate(['/'])
+                this.router.navigate(['dashboard'])
             }
         },
         error: (error: HttpResponse<any>) => {
