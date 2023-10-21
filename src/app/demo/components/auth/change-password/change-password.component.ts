@@ -1,29 +1,48 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
 import { Router } from '@angular/router';
-import { HttpResponse } from '@angular/common/http';
 import { AuthService } from 'src/app/demo/service/auth/auth.service';
 import { MessageService } from 'primeng/api';
+import { RessetPasswordModel } from 'src/app/models/resset-password/resset-password.model';
 
 @Component({
-    selector: 'app-change-password',
-    templateUrl: './change-password.component.html',
-    //styles: [``]
+  selector: 'app-change-password',
+  templateUrl: './change-password.component.html',
+  styleUrls: ['./change-password.component.scss']
 })
-export class ChangePasswordComponent {
+export class ChangePasswordComponent implements OnInit {
 
-    valCheck: boolean;
+  constructor(public layoutService: LayoutService, 
+              private router: Router, 
+              private authService: AuthService,
+              private messageService: MessageService) { }
 
-    username!: string
-    password!: string;
-
+    ressetPassword: RessetPasswordModel = new RessetPasswordModel();
+    repeatPassword!: string;
     invalidUsername: boolean;
-    invalidPassword: boolean;
+    invalidPassword: boolean;          
 
-    constructor(public layoutService: LayoutService, 
-                private router: Router, 
-                private authService: AuthService,
-                private messageService: MessageService) {
-   }
+  ngOnInit(): void {
+  }
+
+  signIn(){
+
+  }
+
+  resetPassword(){
+    this.ressetPassword.username = this.authService.getUser();
+
+    console.log(this.ressetPassword)
+
+    this.authService.ressetPassword(this.ressetPassword).subscribe({
+      next: (result) => {
+        console.log(result)
+      },
+      error: (onError) => {
+        console.log(onError)
+      }
+    })
+    
+  }
 
 }

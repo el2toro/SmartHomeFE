@@ -16,16 +16,23 @@ import { HttpClientModule } from '@angular/common/http';
 
 //PrimeNg Modules
 import {PanelModule} from 'primeng/panel';
+import {PasswordModule} from 'primeng/password';
+import {ButtonModule} from 'primeng/button';
+import {CheckboxModule} from 'primeng/checkbox';
+import {ToastModule} from 'primeng/toast';
 
 import { AuthService } from './demo/service/auth/auth.service';
 import { AuthGuardService } from './demo/service/guards/auth-guard.service';
 import { WeatherService } from './demo/service/weather/weather.service';
 import { MessageService } from 'primeng/api';
+import { ChangePasswordComponent } from './demo/components/auth/change-password/change-password.component';
+import { ChangePasswordModule } from './demo/components/auth/change-password/change-password.module';
+import { LoginModule } from './demo/components/auth/login/login.module';
 
 @NgModule({
     declarations: [
         AppComponent, 
-        NotfoundComponent,
+        NotfoundComponent
     ],
     imports: [
         AppRoutingModule,
@@ -33,6 +40,12 @@ import { MessageService } from 'primeng/api';
         BrowserModule,
         HttpClientModule,
         PanelModule,
+        PasswordModule,
+        ButtonModule,
+        CheckboxModule,
+        ToastModule,
+        LoginModule,
+        ChangePasswordModule
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },

@@ -73,6 +73,7 @@ export class LoginComponent {
     })}; 
 
     forgotPassword(){
-        this.router.navigate(['/change-password'])
+        console.log('forgot password clicked')
+        this.router.navigate(['change-password'])
     }
 }

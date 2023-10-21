@@ -1,27 +1,32 @@
 import { NgModule } from '@angular/core';
+import { ChangePasswordComponent } from './change-password.component';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { LoginRoutingModule } from '../login/login-routing.module';
 import { ButtonModule } from 'primeng/button';
-import { CheckboxModule } from 'primeng/checkbox';
+import { CheckboxModule } from 'angular-bootstrap-md';
+import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
-import { InputTextModule } from 'primeng/inputtext';
-import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
+import { MessagesModule } from 'primeng/messages';
 import { ToastModule } from 'primeng/toast';
-import { ChangePasswordComponent } from './change-password.component';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        ButtonModule,
-        CheckboxModule,
-        InputTextModule,
-        FormsModule,
-        PasswordModule,
-        MessageModule,
-        MessagesModule,
-        ToastModule
-    ],
+    imports: [ 
+    CommonModule,
+    LoginRoutingModule,
+    ButtonModule,
+    CheckboxModule,
+    InputTextModule,
+    FormsModule,
+    PasswordModule,
+    MessageModule,
+    MessagesModule,
+    ToastModule],
+
+    exports: [RouterModule],
     declarations: [ChangePasswordComponent]
 })
 export class ChangePasswordModule { }
+

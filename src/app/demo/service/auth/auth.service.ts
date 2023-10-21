@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 import { AuthResponseModel } from "src/app/models/login.model";
 import { ResponseModel } from "src/app/models/response.model";
 import { LoginComponent } from "../../components/auth/login/login.component";
+import { RessetPasswordModel } from "src/app/models/resset-password/resset-password.model";
 
 const TOKEN_KEY = 'auth-token';
 const USER_KEY = 'user-token';
@@ -14,18 +15,18 @@ const USER_KEY = 'user-token';
 
 export class AuthService{
 
-    url: string = 'https://localhost:7097/api/Auth/Login';
+    url: string = 'https://localhost:7097/api/';
 
    constructor(/* @Inject('BASE_URL') private baseUrl: string, */ private http: HttpClient) {
     
    }
 
     login(username: string, password: string): Observable<ResponseModel<AuthResponseModel>>{
-       return this.http.post<ResponseModel<AuthResponseModel>>(this.url, {username, password})          
+       return this.http.post<ResponseModel<AuthResponseModel>>(this.url + 'Auth/Login', {username, password})          
     }
 
-    changePassword(username: string, password: string, newPassword: string) : Observable<ResponseModel<AuthResponseModel>>{
-        return this.http.post<ResponseModel<AuthResponseModel>>(this.url, {username, password, newPassword}) 
+    ressetPassword(ressetPassword: RessetPasswordModel) : Observable<ResponseModel<AuthResponseModel>>{
+        return this.http.post<ResponseModel<AuthResponseModel>>(this.url + 'Auth/RessetPassword', ressetPassword) 
     }
     
     logOut(): void{
