@@ -1,17 +1,12 @@
 import { Component } from '@angular/core';
-import { PrimeNGConfig } from 'primeng/api';
+import { ShellComponent } from "./core/components/shell/shell.component";
+
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html'
+  selector: 'app-root',
+  imports: [ShellComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
-
-    menuMode = 'static';
-
-    constructor(private primengConfig: PrimeNGConfig) { }
-
-    ngOnInit() {
-        this.primengConfig.ripple = true;
-        document.documentElement.style.fontSize = '14px';
-    }
+  title = 'smart-home';
 }
