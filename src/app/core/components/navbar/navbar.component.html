@@ -1,3 +1,25 @@
-<p>
-  navbar works!
-</p>
+<div class="navbar">
+  <img src="assets/images/logo.png" alt="logo">
+  <div class="actions">
+    <button>
+      <img src="assets/svg/message.svg" alt="message">
+    </button>
+    <button>
+      <img src="assets/svg/notifications.svg" alt="notifications">
+    </button>
+    <button [matMenuTriggerFor]="menu" class="profile">
+      <img src="assets/images/profile.jpg" alt="profile"> 
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Profile</button>
+        <button mat-menu-item>Settings</button>
+      </mat-menu>
+    </button>
+
+    <div class="separator"></div>
+
+    <button class="add-device-button">
+      <img src="assets/svg/add.svg" alt="addevice">
+      Add Device
+    </button>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-background);
+
+    .actions{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+
+        button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--secondary-background);
+            border: none;
+            border-radius: 25px;
+            width: 48px;
+            height: 48px;
+
+            &:hover{
+                cursor: pointer;
+                opacity: 0.9;
+            }
+        }
+
+        .profile{
+            img{
+                height: 30px;
+                width: 30px;
+                border-radius: 25px;
+            }
+        }
+
+        .separator{
+            background-color: var(--soft-secondary-background);
+            width: 4px;
+            border-radius: 2px;
+            height: 80%;
+        }
+
+        .add-device-button{
+           width: 149px;
+           background-color: var(--radial);
+           font-family: var(--satoshi-font-family);
+           font-size: 1rem;
+           gap: 10px;
+        }
+    }
+}
