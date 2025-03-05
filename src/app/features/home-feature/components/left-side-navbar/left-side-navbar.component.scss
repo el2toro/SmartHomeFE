@@ -1,0 +1,26 @@
+.left-side-navbar{    
+    display: grid;
+    //background-color: #746c64;
+    //opacity: 0.9;
+    width: 50px;
+    border-radius: 25px;
+
+    button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background-color: #746c64;
+        border: none;
+
+        img{
+            height: 15px;
+        }
+
+        &:hover{
+            cursor: pointer;
+            opacity: 0.9;
+        }
+    }
+}
