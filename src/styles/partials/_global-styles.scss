@@ -1,11 +1,13 @@
 @font-face {
-    font-family: 'Satoshi';
-    src: url('../../assets/fonts/satoshi/Satoshi-Regular.otf') format('truetype');
+    font-family: 'SfPro';
+    src: url('../../assets/fonts/sf-pro/SF-Pro-Display-Regular.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 body{
-    background-color: var(--primary-background);
-    padding: 20px 100px 0px 100px;
+    background-image: url('../../assets/images/background.jpg');
+    background-repeat: no-repeat;
+
+    padding: 50px;
 }
