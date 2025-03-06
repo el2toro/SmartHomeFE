@@ -1,0 +1,61 @@
+<div class="component">
+  <div class="actions">
+   <div class="assistant">
+    <img src="assets/svg/siri.svg" alt="svg">
+     <input type="text" value="" placeholder="Remote...">
+     <button>
+      <img src="assets/svg/microphone.svg" alt="icon">
+     </button>
+   </div>
+   <div class="notifications">
+     <button>
+      <img src="assets/svg/notification.svg" alt="icon">
+     </button>
+   </div>
+
+   <div class="profile">
+    <button [matMenuTriggerFor]="menu" class="profile-button">
+      <img src="assets/images/profile.jpg" alt="profile"> 
+      <div class="name">
+        <p>Hi, Wade Waren</p>
+        <p>&#64;wedwarren</p>
+      </div>
+      <p>v</p>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Profile</button>
+        <button mat-menu-item>Settings</button>
+      </mat-menu>
+    </button>
+   </div>
+  </div>
+  <div class="music-player">
+   <div class="circle">
+     <div class="inner-circle">
+     </div>
+   </div>
+
+   <div class="player">
+     <div class="title">
+       <p>Album <span>img here  Divide</span></p>
+       <p>Ed Sheran - Shape Of You</p>
+     </div>
+
+     <div class="progress-container">
+        <div class="progress-bar">
+           
+        </div>
+     </div>
+     <div class="actions">
+       <button>1</button>
+       <button>2</button>
+       <button>3</button>
+       <button>4</button>
+       <button>5</button>
+     </div>
+   </div>
+
+   <div class="volume">
+    <input class="volume-range" orient="vertical" type="range" step="0.5" value="5" min="1" max="10">
+   </div>
+  </div>
+</div>
