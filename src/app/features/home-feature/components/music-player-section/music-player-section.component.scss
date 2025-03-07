@@ -37,7 +37,7 @@
 
             &:hover{
                 cursor: pointer;
-                opacity: 0.7;
+                opacity: 0.8;
             }
            }
         }
@@ -60,7 +60,7 @@
 
                 &:hover{
                     cursor: pointer;
-                    opacity: 0.7;
+                    opacity: 0.8;
                 }
             }
         }
@@ -99,6 +99,7 @@
  
     .music-player{
         display: flex;
+        justify-content: space-between;
         align-items: center;
         gap: 10px;
         padding: 20px;
@@ -142,14 +143,53 @@
                     font-weight: 600;
                 }
             }
+
+            .buttons{
+                display: flex;
+                justify-content: space-between;
+                button{
+                    text-align: center;
+                    background-color: transparent;
+                    border: none;
+
+                    mat-icon{
+                        width: 20px;
+                        height: 20px;
+                    }
+
+                    &:hover{
+                        cursor: pointer;
+                        opacity: 0.8;
+                    }
+                }
+
+                .play{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50px;
+                    height: 50px;
+                    background-image: linear-gradient(to right, #00BAFF, #004EFF);
+                    border-radius: 25px;                 
+                }
+            }
         }
 
-        .progress{
-
+        .progress-container{
+            
+          .progress-bar{
+            
+          }
         }
 
         .volume{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+
             .volume-range{
+                width: 10px;
                 -webkit-appearance: none;
                 height: 150px;
                 border-radius: 5px;
@@ -157,6 +197,21 @@
                 outline: none;
                 writing-mode: bt-lr; /* IE */
                 -webkit-appearance: slider-vertical; /* WebKit */
+            }
+
+            mat-icon{
+                width: 15px;
+                height: 15px;
+            }
+
+            .volume-off{
+                background-color: transparent;
+                border: none;
+
+                &:hover{
+                    cursor: pointer;
+                    opacity: 0.8;
+                }
             }
         }
     }

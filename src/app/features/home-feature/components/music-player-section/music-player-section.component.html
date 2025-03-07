@@ -45,17 +45,30 @@
            
         </div>
      </div>
-     <div class="actions">
-       <button>1</button>
-       <button>2</button>
-       <button>3</button>
-       <button>4</button>
-       <button>5</button>
+     <div class="buttons">
+       <button>
+        <mat-icon svgIcon="shuffle"></mat-icon>
+       </button>
+       <button>
+        <mat-icon svgIcon="backward-step"></mat-icon>
+       </button>
+       <button class="play">
+        <mat-icon svgIcon="play"></mat-icon>
+       </button>
+       <button>
+        <mat-icon svgIcon="forward-step"></mat-icon>
+       </button>
+       <button>
+        <mat-icon svgIcon="arrows-rotate"></mat-icon>
+       </button>
      </div>
    </div>
 
    <div class="volume">
     <input class="volume-range" orient="vertical" type="range" step="0.5" value="5" min="1" max="10">
+    <button class="volume-off">
+      <mat-icon svgIcon="volume-high"></mat-icon>
+    </button>
    </div>
   </div>
 </div>
